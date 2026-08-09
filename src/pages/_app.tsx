@@ -13,6 +13,7 @@ import { PreferencesProvider } from "@/contexts/preferences-context";
 import { fetchJson } from "@/lib/fetch";
 
 import ErrorBoundary from "@/components/error-boundary";
+import { NextAccessBanner } from "@/components/next-access-banner";
 import useSWR from "swr";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -38,6 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
 									<ErrorBoundary>
 										<Component {...pageProps} />
 									</ErrorBoundary>
+									<NextAccessBanner user={api.data} />
 									<Toaster richColors />
 								</div>
 							</div>
